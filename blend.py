@@ -63,7 +63,7 @@ if __name__ == '__main__':
         print j, clf
         dataset_blend_test_j = np.zeros((X_submission.shape[0], len(skf)))
         for i, (train, test) in enumerate(skf):
-            print "Fold", i,
+            print "Fold", i
             X_train = X[train]
             y_train = y[train]
             X_test = X[test]
