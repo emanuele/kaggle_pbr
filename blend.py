@@ -93,4 +93,6 @@ if __name__ == '__main__':
     y_submission = (y_submission - y_submission.min()) / (y_submission.max() - y_submission.min())
 
     print "Saving Results."
-    np.savetxt(fname='submission.csv', X=y_submission, fmt='%0.9f')
+    tmp = np.vstack([range(1, len(y_submission)+1), y_submission]).T
+    np.savetxt(fname='submission.csv', X=tmp, fmt='%d,%0.9f',
+               header='MoleculeId,PredictedProbability', comments='')
